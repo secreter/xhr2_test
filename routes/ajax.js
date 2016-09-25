@@ -13,20 +13,18 @@ var storage = multer.diskStorage({
 })
 
 var upload = multer({ storage: storage })
-// var upload = multer({ dest: 'uploads/',filename:Math.random().toString().replace('.','')+'jpg' })
-
 /* GET ajax page. */
-router.get('/', function(req, res, next) {
+router.get('/',upload.any(), function(req, res, next) {
 	 // res.render('index', { title: 'Express' });
   // res.send('Got a GET request');
   
-  res.send({airead: 'fan',data:req.body});
+  res.send({so: 'fan',data:req.query});
 });
 router.post('/',upload.any(), function(req, res, next) {
   // res.send('Got a POST request');
   console.log('req.files', req.files);
   console.log('req.body', req.body);
-  res.send({airead: 'fan',data:req.body});
+  res.send({so: 'fan',data:req.body});
 });
 router.delete('/', function(req, res, next) {
   res.send('Got a DELETE request');
