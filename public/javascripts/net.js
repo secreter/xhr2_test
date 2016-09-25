@@ -64,7 +64,6 @@ function formatParam(obj){
 
 
 function ajax2(option){
-	// debugger
 	if (!option.url) {
 		console.warn('ajax缺少url')
 	}
@@ -76,9 +75,6 @@ function ajax2(option){
 	option.form=option.form||null
 	option.data=option.data||{}
 	let param='',formData=null
-  
-  
-	
 	//创建xhr对象 
   let xhr = new XMLHttpRequest()
   //设置xhr请求的超时时间
@@ -140,7 +136,7 @@ function ajax2(option){
 
 //用blob请求一张图片
 ajax2({
-	url:'http://localhost:3000/images/1.jpg',
+	url:'./images/1.jpg',
 	responseType:'blob',
 	form:document.getElementById('user'),
 	timeout:3000,
